@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light p-4 mb-0">New Book</h5>
+      <div class="form-body p-4">
+        <%= form_with model: @book do |f| %>
+            <%= f.text_field :title, class:"form-control", placeholder:"Title" %>
+          </div>
+          <%= f.text_area :body, class:"form-control", rows:"3", placeholder:"Opinion" %>
+          <hr>
+          <%= f.submit 'Create Book', class:"btn btn-lg btn-block btn-info mt-4" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
