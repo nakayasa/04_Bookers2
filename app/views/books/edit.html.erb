@@ -1,10 +1,34 @@
+<div class="container px-5 px-sm-0">
+<%= render 'errors', book: @book %>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>Editing Book</h1>
+    <%= form_with model: @book do |f| %>
+      <div class="create">
+        <p>Title</p>
+        <%= f.text_field :title %>
+      </div>
 
+      <div class="create">
+        <p>Opinion</p>
+          <%= f.text_area :body %>
+      </div>
 
-
-
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <div class="form-group">
+        <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
+      </div>
     <% end %>
-<% end %>
+
+    <td><%= link_to book_path do %>
+        Show
+        <% end %>
+    </td>
+    <td>|</td>
+    <td><%= link_to books_path do %>
+        Back
+        <% end %>
+    </td>
+
+    </div>
+  </div>
+</div>
